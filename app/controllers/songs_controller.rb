@@ -1,5 +1,11 @@
 class SongsController < ApplicationController
 
+  def upload
+    Song.upload(params[:song][:csv])
+
+    redirect_to songs_path
+  end
+
   def index
     @songs = Song.all
   end

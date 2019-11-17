@@ -5,3 +5,8 @@
 </ul>
 <br>
 <%= link_to "Add New Song", new_song_path %>
+
+<%= form_for @songs.first, url: { action: 'upload' }, html: { method: 'post' } do |f| %>
+  <%= f.file_field :csv %>
+  <%= f.submit "Upload songs" %>
+<% end %>
